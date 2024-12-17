@@ -108,9 +108,9 @@ export class ArmaController {
 
             const updatedArma = await repository.arma.update({where: { id },
             data:{
-                tipo: tipo,
-                numeroSerie: numeroSerie,
-                crimeId: crimeId
+                tipo,
+                numeroSerie,
+                crimeId
             }})
 
             return res.status(200).json({
