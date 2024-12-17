@@ -4,14 +4,16 @@ import { CriminosoController } from "./controllers/criminoso.controller";
 import { CrimeController } from "./controllers/crime.controller";
 import { ArmaController } from "./controllers/arma.controller";
 
-const criminosoController = new CriminosoController()
-const crimeController = new CrimeController()
-const armaController = new ArmaController()
-
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+
+
+const criminosoController = new CriminosoController()
+const crimeController = new CrimeController()
+const armaController = new ArmaController()
+
 
 app.get('/criminosos', criminosoController.index)
 
@@ -44,12 +46,6 @@ app.post('/armas', armaController.store)
 app.put('/armas/:id', armaController.update) 
 
 app.delete('/armas/:id', armaController.delete) 
-
-
-
-
-
-
 
 
 app.listen(3000, () => {
