@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import { repository } from '../database/prisma.connection'
 import { Crime } from "../models/crime.model";
 
-export class ArmaController {
+export class CrimeController {
     public async index(req:Request, res:Response){
         try {
             const crimes = await repository.crime.findMany({})
